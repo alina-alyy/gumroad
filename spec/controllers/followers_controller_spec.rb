@@ -230,6 +230,8 @@ describe FollowersController, inertia: true do
         expect { get :cancel, params: { id: follower.external_id } }.to change {
           follower.reload.deleted?
         }.from(false).to(true)
+        expect(response).to be_successful
+        expect(inertia.component).to eq("Followers/Cancel")
       end
 
       it "returns 404 when follower is invalid" do
