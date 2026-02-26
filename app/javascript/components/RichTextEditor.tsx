@@ -133,6 +133,7 @@ export const PopoverMenuItem = ({
       {children}
     </PopoverContent>
   </Popover>
+  
 );
 
 declare module "@tiptap/core" {
